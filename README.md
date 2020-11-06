@@ -6,12 +6,12 @@ In this project we have developed novel architectures for image super-resolution
 <h1>Groundwork</h1>
 Machine learning has gone through great advances in the last decade fuelled by the easy availability of GPUs and the exponential increase in interest in this field. Naturally, some researchers have developed models which have changed the landscape forever. We implemented some of these famous models.<br>
 <ol>
-  <li>ResNet: We implemeted several types of ResNet architectures including ResNet34, ResNet50, ResNeXt and ResNeSt.</li>
-  <li>SAGAN: The self attention module of SAGAN was implemented. This attention mechanism has been widely dopted for several computer vision tasks.</li>
-  <li>Spectral Normalization: Spectral Normalization is a weight normalization technique to stabilize the training of deep models, specially GANs. They are also used in tandem with attention mechanisms to provide stability and lead to output images of better quality. In spectral normalization, Lipschitz constant is the only hyper-parameter to be tuned, and the algorithm does not require intensive tuning of the only hyper-parameter for satisfactory performance.</li>
-  <li>U-Net: U-Nets have been used for biomedial image segmentation, and have produced great results. They formed a major component of our final models and hence a fair amount of time was specnt in understanding their functioning in detail and building U-Net style mdoels suitable for tackling our problem statement.</li>
-  <li>Activation Functions: Recently, a large number of advanced activation functions have also been developed whihc have produced promising results. We implemented severla of these activation functions, which were later used in our experimentation. Some of these activation functions were: Swish, ELiSH, Mila, SineReLU, Mish, Aria-2, SiLU, etc.</li>
-  <li>Perceptual Loss Functions: Perceptual loss functions have found great success in real-time style transfer and image super-resolution. We developed different types of perceptual loss functions combining it's three main components, namely content loss, style loss and total variation regularization. All of these loss functions were used during experimentation, to find the ones which led to the most perceptually pleasing results.</li>
+  <li><b>ResNet:</b> We implemeted several types of ResNet architectures including ResNet34, ResNet50, ResNeXt and ResNeSt.</li>
+  <li><b>SAGAN:</b> The self attention module of SAGAN was implemented. This attention mechanism has been widely dopted for several computer vision tasks.</li>
+  <li><b>Spectral Normalization:</b> Spectral Normalization is a weight normalization technique to stabilize the training of deep models, specially GANs. They are also used in tandem with attention mechanisms to provide stability and lead to output images of better quality. In spectral normalization, Lipschitz constant is the only hyper-parameter to be tuned, and the algorithm does not require intensive tuning of the only hyper-parameter for satisfactory performance.</li>
+  <li><b>U-Net:</b> U-Nets have been used for biomedial image segmentation, and have produced great results. They formed a major component of our final models and hence a fair amount of time was specnt in understanding their functioning in detail and building U-Net style mdoels suitable for tackling our problem statement.</li>
+  <li><b>Activation Functions:</b> Recently, a large number of advanced activation functions have also been developed whihc have produced promising results. We implemented severla of these activation functions, which were later used in our experimentation. Some of these activation functions were: Swish, ELiSH, Mila, SineReLU, Mish, Aria-2, SiLU, etc.</li>
+  <li><b>Perceptual Loss Functions:</b> Perceptual loss functions have found great success in real-time style transfer and image super-resolution. We developed different types of perceptual loss functions combining it's three main components, namely content loss, style loss and total variation regularization. All of these loss functions were used during experimentation, to find the ones which led to the most perceptually pleasing results.</li>
 </ol>
 
 <h1>Part 1 - U-Nets</h1>
@@ -58,7 +58,7 @@ In total we have implemented 8 models. The details about the encoder and decoder
 <b>Upsampling Mechanisms:</b> Initially we tried using deconvolution layers for this purpose. However they led to artifacts in the final HR images. We then used the pixel shuffle upsampling strategy described in <a href="https://arxiv.org/ftp/arxiv/papers/1707/1707.02937.pdf">this</a> paper. This led to much more natural looking images without any artifacts.<br>
 
 <h2>Quantitative Results</h2>
-<img src="images/quantitative-results/unetx4.png" alt="unet-results">
+<img src="images/quantitative-results/unetx4.PNG" alt="unet-results">
 
 <h2>Visual Results</h2>
 <img src="images/visual-results/unet_visual_results.png" alt="visual-results">
@@ -66,7 +66,7 @@ In total we have implemented 8 models. The details about the encoder and decoder
 
 <h1>Part 2 - Self Attention RCAN</h1>
 In this part we use the RCAN model as the baseline. RCAN consists of 10 Residual Groups (RGs), with 20 RCAB blocks each.<br>
-<img src="images/rcan.png" alt="rcan-image">
+<img src="images/rcan.PNG" alt="rcan-image">
 Each RCAB block consists of a channel attention layer. In total, the RCAN model has 200 RCAB blocks making it a very deep network.<br>
 We try to use self attention along with channel attention in the RCAN model. Also, we make the baseline RCAN model lightweight by limiting the Residual Groups to 6. Each RCAB block has a channel attention layer followed by a self attention layer. In the self attention layer we use reduction = 16 and use a maxpool operator to limit training images to size 24x24.<br>
 <img src="images/attn.png" alt="attention-image">
@@ -75,8 +75,8 @@ We try to use self attention along with channel attention in the RCAN model. Als
 <img src="images/visual-results/rcan_visual_results.png" alt="visual-results">
 
 <h2>Overall Quantitative Results</h2>
-<img src="images/quantitative-results/allx2.png" alt="">
-<img src="images/quantitative-results/allx4.png" alt="">
+<img src="images/quantitative-results/allx2.PNG" alt="">
+<img src="images/quantitative-results/allx4.PNG" alt="">
 
 <h2>Acknowledgements</h2>
 <ul>
