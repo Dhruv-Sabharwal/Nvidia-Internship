@@ -11,7 +11,7 @@ In this project we have developed novel architectures for image super-resolution
 
 In the upcoming sections, we first talk about the groundwork that was done to gain the required knowledge for solving the problem statement. After that, this readme is divided into 2 parts, each describing a different approach we took to solve this problem.<br>
 
-<h2>Groundwork</h2>
+<h1>Groundwork</h1>
 Machine learning has gone through great advances in the last decade fuelled by the easy availability of GPUs and the exponential increase in interest in this field. Naturally, some researchers have developed models which have changed the landscape forever. We implemented some of these famous models.<br>
 
 <ol>
@@ -23,7 +23,7 @@ Machine learning has gone through great advances in the last decade fuelled by t
   <li><b>Perceptual Loss Functions:</b> Perceptual loss functions have found great success in real-time style transfer and image super-resolution. We developed different types of perceptual loss functions combining it's three main components, namely content loss, style loss and total variation regularization. All of these loss functions were used during experimentation, to find the ones which led to the most perceptually pleasing results.</li>
 </ol>
 
-<h2>Part 1 - U-Nets</h2>
+<h1>Part 1 - U-Nets</h1>
 U-Nets have been used in the past for biomedical image segmentation. They consist of a contracting path and a symmetric expanding path.<br>
 <img src="images/unets.png" alt="unet-image"><br>
 For our purpose we have split the unet into 2 parts - the decoder and the encoder. We use a pretrained resnet model as the encoder and train only the decoder. In the above image, the red box shows the encoder and the purple box shows he decoder. The pretrained encoder is adept at feature extraction and the decoder then converts these features into the HR image. <br>
@@ -77,7 +77,7 @@ In total we have implemented 9 models. The details about the encoder and decoder
 <img src="images/visual-results/unet_visual_results.png" alt="visual-results">
 
 
-<h2>Part 2 - Self Attention RCAN</h2>
+<h1>Part 2 - Self Attention RCAN</h1>
 In this part we use the RCAN model as the baseline. RCAN consists of 10 Residual Groups (RGs), with 20 RCAB blocks each.<br>
 <img src="images/rcan.PNG" alt="rcan-image" height="80%" width="80%">
 Each RCAB block consists of a channel attention layer. In total, the RCAN model has 200 RCAB blocks making it a very deep network. We try to use self attention along with channel attention in the RCAN model. Also, we make the baseline RCAN model lightweight by limiting the Residual Groups to 6. Each RCAB block has a channel attention layer followed by a self attention layer. In the self attention layer we use reduction of 16 and use a maxpool operator to limit training images to size 24x24. We call our model <b>SA-RCAN</b>.<br>
