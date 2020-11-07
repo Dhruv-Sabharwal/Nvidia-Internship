@@ -1,15 +1,15 @@
 <h1>NVIDIA Research Internship</h1>
 <h2>Dhruv Sabharwal</h2>
 <h2>Project Domain: Single Image Super-Resolution</h2>
-In this project we have developed novel architectures for image super-resolution using u-nets, modern up-sampling layers and attention mechanisms, achieving high PSNR, SSIM and perceptual scores.<br>
+In this project we have developed novel architectures for image super-resolution using U-Nets, modern up-sampling layers and attention mechanisms, achieving high PSNR, SSIM and perceptual scores.<br>
 
 <h2> Our Contributions </h2>
 <ul>
   <li> We develop a large number of U-Net based models for image super-resolution. We then compare these models and present our results as well as observations.</li>
-  <li> We show that we can reduce the size of RCAN by upto 40% and still get comparable results by employing self-attention in tandem with channel attention. Self-attention helps in modeling long-range dependencies and lead to smoother (and more natural) transitions of objects in the SR image.</li>
+  <li> We show that we can reduce the size of RCAN by upto 40% and still get comparable results by employing self-attention in tandem with channel attention. Self-attention helps in modeling long-range dependencies and leads to smoother (and more natural) transition of objects in the SR image.</li>
 </ul>
 
-In the upcoming sections, first we talk about the groundwork that was done to gain the required knowledge for solving the problem statement. After that, this readme is divided into 2 parts, each describing a different approach we took to solve this problem.<br>
+In the upcoming sections, we first talk about the groundwork that was done to gain the required knowledge for solving the problem statement. After that, this readme is divided into 2 parts, each describing a different approach we took to solve this problem.<br>
 
 <h1>Groundwork</h1>
 Machine learning has gone through great advances in the last decade fuelled by the easy availability of GPUs and the exponential increase in interest in this field. Naturally, some researchers have developed models which have changed the landscape forever. We implemented some of these famous models.<br>
@@ -30,11 +30,11 @@ For our purpose we have split the unet into 2 parts - the decoder and the encode
 <h3>Encoder</h3>
 We have experimented with 3 different resnet models as encoders:<br>
 <ol>
-  <li>ResNet-34</li>
-  <li>ResNet-50</li>
-  <li>ResNeXt</li>
+  <li><b>ResNet-34</b></li>
+  <li><b>ResNet-50</b></li>
+  <li><b>ResNeXt</b></li>
 </ol>
-<img src="images/resnets.png" alt="resnet-images"><br>
+<img src="images/resnets.png" alt="resnet-images" height="80%" width="80%"><br>
 ResNets make use of skip connections which act like identity mappings and enable us to implement deeper networks.<br>
 <h3>Decoder</h3>
 We have experimented with 4 main choices for the decoder:<br>
@@ -79,9 +79,8 @@ In total we have implemented 9 models. The details about the encoder and decoder
 
 <h1>Part 2 - Self Attention RCAN</h1>
 In this part we use the RCAN model as the baseline. RCAN consists of 10 Residual Groups (RGs), with 20 RCAB blocks each.<br>
-<img src="images/rcan.PNG" alt="rcan-image">
-Each RCAB block consists of a channel attention layer. In total, the RCAN model has 200 RCAB blocks making it a very deep network.<br>
-We try to use self attention along with channel attention in the RCAN model. Also, we make the baseline RCAN model lightweight by limiting the Residual Groups to 6. Each RCAB block has a channel attention layer followed by a self attention layer. In the self attention layer we use reduction of 16 and use a maxpool operator to limit training images to size 24x24. We call our model <b>SA-RCAN</b>.<br>
+<img src="images/rcan.PNG" alt="rcan-image" height="80%" width="80%">
+Each RCAB block consists of a channel attention layer. In total, the RCAN model has 200 RCAB blocks making it a very deep network. We try to use self attention along with channel attention in the RCAN model. Also, we make the baseline RCAN model lightweight by limiting the Residual Groups to 6. Each RCAB block has a channel attention layer followed by a self attention layer. In the self attention layer we use reduction of 16 and use a maxpool operator to limit training images to size 24x24. We call our model <b>SA-RCAN</b>.<br>
 <img src="images/attn.png" alt="attention-image">
 
 <h2>Visual Results</h2>
