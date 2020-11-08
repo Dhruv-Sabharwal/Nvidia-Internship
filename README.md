@@ -37,7 +37,7 @@ We have experimented with 3 different resnet models as encoders:<br>
 <img src="images/resnets.png" alt="resnet-images" height="80%" width="80%"><br>
 ResNets make use of skip connections which act like identity mappings and enable us to implement deeper networks.<br>
 <h3>Decoder</h3>
-We have experimented with 4 main choices for the decoder:<br>
+We have experimented with 3 main choices for the decoder:<br>
 
 <ol>
   <li><b>Simple ResNet Architecture -</b> this is a mirror image of the architecture used as the encoder.</li>
