@@ -71,7 +71,7 @@ In total we have implemented 9 models. The details about the encoder and decoder
 <h2>Quantitative Results</h2>
 <img src="images/quantitative-results/unetx4.PNG" alt="unet-results">
 
-<b>Note:</b> Architecture 9 gave us the best results compared to other attention based models. Architecture 2 gave us the best results when we compare the non-attention models relative to the number of parameters and inference time. In the upcoming sections we refer to Architecture 2 as <b>SR-ResUNet</b> and Architecture 9 as <b>Attentive SR-ResUNet</b>. 
+<b>Note:</b> Architecture 9 gave us the best results among the attention based models. Architecture 2 gave us the best results among the non-attention models relative to the number of parameters and inference time. In the upcoming sections we refer to Architecture 2 as <b>SR-ResUNet</b> and Architecture 9 as <b>Attentive SR-ResUNet</b>. 
 
 <h2>Visual Results</h2>
 <img src="images/visual-results/unet_visual_results.png" alt="visual-results">
