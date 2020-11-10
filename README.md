@@ -61,7 +61,7 @@ In total we have implemented 9 models. The details about the encoder and decoder
 
 <h2>Training Details</h2>
 <b>Dataset:</b> All models are trained on the Div2k dataset on images of size 48x48. The images are cropped at random from the Div2k dataset. We also use augmentation strategies (horizontal and vertical rotations) to increase the size of the dataset.<br>
-<b>Optimizers:</b> We have experimented with several optimizers, including ReLU, LeakyReLU, PReLU and Mish. The LeakyReLU activation function gave us the best results.<br>
+<b>Activation Functions:</b> We have experimented with several activation functions, including ReLU, LeakyReLU, PReLU and Mish. The LeakyReLU activation function gave us the best results.<br>
 <b>Normalization layers:</b> We have experimented with 3 normalization layers, Instance normalization, Batch normalization and Spectral normalization. We also tried avoiding the use of normalization layers, however that led to loss of perceptual quality. Instance normalization worked best with the convolution layers and spectral normalization worked best with the attention blocks.<br>
 <b>Initialization Strategies:</b> Several initialization strategies have been experimented with including Kaiming initialization, Xavier initialization and Random initialization. Kaiming Uniform initialization worked best for our models.<br>
 <b>Loss Functions:</b> We have experimented with perceptual losses as well as the usual L1 and L2 loss functions. The perceptual loss included content loss, style loss and total variation regularization components. A mixture of perceptual loss and L1 loss were used to train the final models in Part 1 and only L1 loss was used for the models in Part 2.<br>
@@ -71,7 +71,7 @@ In total we have implemented 9 models. The details about the encoder and decoder
 <h2>Quantitative Results</h2>
 <img src="images/quantitative-results/unetx4.PNG" alt="unet-results">
 
-<b>Note:</b> In the upcoming sections we refer to Architecture 2 as <b>SR-ResUNet</b> and Architecture 9 as <b>Attentive SR-ResUNet</b>. 
+<b>Note:</b> Architecture 9 gave us the best results compared to other attention based models. Architecture 2 gave us the best results when we compare the non-attention models relative to the number of parameters and inference time. In the upcoming sections we refer to Architecture 2 as <b>SR-ResUNet</b> and Architecture 9 as <b>Attentive SR-ResUNet</b>. 
 
 <h2>Visual Results</h2>
 <img src="images/visual-results/unet_visual_results.png" alt="visual-results">
