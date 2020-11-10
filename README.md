@@ -84,7 +84,7 @@ Each RCAB block consists of a channel attention layer. In total, the RCAN model 
 <img src="images/attn.png" alt="attention-image">
 
 <h2>Visual Results</h2>
-<img src="images/visual-results/rcan_visual_results.png" alt="visual-results">
+<img src="images/visual-results/sa_rcan_visual_results.png" alt="visual-results">
 
 <h2>Overall Quantitative Results</h2>
 <img src="images/quantitative-results/allx2.PNG" alt="">
