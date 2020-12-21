@@ -1,5 +1,6 @@
 <h1>NVIDIA Research Internship</h1>
-<h2>Dhruv Sabharwal</h2>
+<h3>Dhruv Sabharwal</h3>
+<h3>Megh Makwana</h3>
 <h2>Project Domain: Single Image Super-Resolution</h2>
 In this project we have developed novel architectures for image super-resolution using U-Nets, modern up-sampling layers and attention mechanisms, achieving high PSNR, SSIM and perceptual scores.<br>
 
